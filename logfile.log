@@ -27,3 +27,30 @@
 {"level":"info","message":"Connected to mongodb://localhost:27017/vidly2..."}
 {"level":"info","message":"Listening on port 3002..."}
 {"level":"info","message":"Connected to mongodb://localhost:27017/vidly2..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly2..."}
+{"body":"{\"name\": \"Loic jr\",\r\n    \"email\": \"loicjr@gmail.com\",\r\n    \"password\": \"12345\"\r\n    \"isAdmin\": \"true\"\r\n  }","expose":true,"level":"error","message":"Unexpected string in JSON at position 84 Unexpected string in JSON at position 84","stack":"SyntaxError: Unexpected string in JSON at position 84\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Users\\Kouede Loic\\OneDrive\\Documents\\React Projects\\vidly-app-back-end-master\\node_modules\\body-parser\\lib\\types\\json.js:89:19)\n    at C:\\Users\\Kouede Loic\\OneDrive\\Documents\\React Projects\\vidly-app-back-end-master\\node_modules\\body-parser\\lib\\read.js:121:18\n    at invokeCallback (C:\\Users\\Kouede Loic\\OneDrive\\Documents\\React Projects\\vidly-app-back-end-master\\node_modules\\raw-body\\index.js:224:16)\n    at done (C:\\Users\\Kouede Loic\\OneDrive\\Documents\\React Projects\\vidly-app-back-end-master\\node_modules\\raw-body\\index.js:213:7)\n    at IncomingMessage.onEnd (C:\\Users\\Kouede Loic\\OneDrive\\Documents\\React Projects\\vidly-app-back-end-master\\node_modules\\raw-body\\index.js:273:7)\n    at IncomingMessage.emit (node:events:538:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":400,"statusCode":400,"type":"entity.parse.failed"}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly2..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly2..."}
+{"level":"info","message":"Listening on port 3002..."}
+{"level":"info","message":"Connected to mongodb://localhost:27017/vidly2..."}
