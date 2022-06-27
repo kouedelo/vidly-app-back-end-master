@@ -5,13 +5,15 @@ const express = require("express");
 const router = express.Router();
 const validator = require("../middleware/validate");
 const validateObjectId = require("../middleware/validateObjectid");
+const auth = require("../middleware/auth");
+const admin = require("../middleware/admin");
 
 router.get("/", async (req, res) => {
   const movies = await Movie.find().sort("name");
   res.send(movies);
 });
 
-router.post("/", validator(validate), async (req, res) => {
+router.post("/", [auth, validator(validate)], async (req, res) => {
   const genre = await Genre.findById(req.body.genreId);
   if (!genre) return res.status(400).send("Invalid genre.");
 
@@ -31,7 +33,7 @@ router.post("/", validator(validate), async (req, res) => {
 
 router.put(
   "/:id",
-  [validateObjectId, validator(validate)],
+  [auth, validateObjectId, validator(validate)],
   async (req, res) => {
     const genre = await Genre.findById(req.body.genreId);
     if (!genre) return res.status(400).send("Invalid genre.");
@@ -57,7 +59,7 @@ router.put(
   }
 );
 
-router.delete("/:id", validateObjectId, async (req, res) => {
+router.delete("/:id", [auth, admin, validateObjectId], async (req, res) => {
   const movie = await Movie.findByIdAndRemove(req.params.id);
 
   if (!movie)

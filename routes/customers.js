@@ -3,13 +3,14 @@ const { Customer, validate } = require("../models/customer");
 const router = express.Router();
 const validator = require("../middleware/validate");
 const validateObjectId = require("../middleware/validateObjectid");
+const auth = require("../middleware/auth");
 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   const customers = await Customer.find().sort("name");
   res.send(customers);
 });
 
-router.post("/", validator(validate), async (req, res) => {
+router.post("/", [auth, validator(validate)], async (req, res) => {
   let customer = new Customer({
     name: req.body.name,
     isGold: req.body.isGold,
@@ -22,7 +23,7 @@ router.post("/", validator(validate), async (req, res) => {
 
 router.put(
   "/:id",
-  [validateObjectId, validator(validate)],
+  [auth, validateObjectId, validator(validate)],
   async (req, res) => {
     const customer = await Customer.findByIdAndUpdate(
       req.params.id,
@@ -43,7 +44,7 @@ router.put(
   }
 );
 
-router.delete("/:id", validateObjectId, async (req, res) => {
+router.delete("/:id", [auth, validateObjectId], async (req, res) => {
   const customer = await Customer.findByIdAndRemove(req.params.id);
 
   if (!customer)
@@ -54,7 +55,7 @@ router.delete("/:id", validateObjectId, async (req, res) => {
   res.send(customer);
 });
 
-router.get("/:id", validateObjectId, async (req, res) => {
+router.get("/:id", [auth, validateObjectId], async (req, res) => {
   const customer = await Customer.findById(req.params.id);
 
   if (!customer)

@@ -6,16 +6,17 @@ const Fawn = require("fawn");
 const validator = require("../middleware/validate");
 const validateObjectId = require("../middleware/validateObjectid");
 const express = require("express");
+const auth = require("../middleware/auth");
 const router = express.Router();
 
 //Fawn.init(mongoose);
 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   const rentals = await Rental.find().sort("-dateOut");
   res.send(rentals);
 });
 
-router.post("/", validator(validate), async (req, res) => {
+router.post("/", [auth, validator(validate)], async (req, res) => {
   const customer = await Customer.findById(req.body.customerId);
   if (!customer) return res.status(400).send("Invalid customer.");
 
@@ -61,7 +62,7 @@ router.post("/", validator(validate), async (req, res) => {
   // }
 });
 
-router.get("/:id", validateObjectId, async (req, res) => {
+router.get("/:id", [auth, validateObjectId], async (req, res) => {
   const rental = await Rental.findById(req.params.id);
 
   if (!rental)
